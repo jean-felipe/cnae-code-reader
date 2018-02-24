@@ -1,0 +1,20 @@
+# CNAE Code Reader
+
+## This project user the follow stack:
+
+- Rails 5.1
+- Ruby 2.4
+- Postgres
+- Docker
+- Json API
+
+## To run the server:
+
+- Install docker for your environment.
+- Run `docker-compose up`
+- Access `localhost:3000/documentation` and find live examples.
+
+## To run the tests:
+
+- Install docker first.
+- Run `docker-compose run web rspec`
