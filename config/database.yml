@@ -14,16 +14,20 @@
 # Configure Using Gemfile
 # gem 'pg'
 #
-default: &default
-  adapter: postgresql
-  encoding: unicode
-  # For details on connection pooling, see Rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+default: &default 
+  adapter: postgresql 
+  encoding: unicode 
+  pool: 5 
+  timeout: 5000 
+  username: postgres 
+  # please see the update below about using hostnames to 
+  # access linked services via docker-compose
+  host: <%= ENV['POSTGRES_PORT_5432_TCP_ADDR'] %> 
+  port: <%= ENV['POSTGRES_PORT_5432_TCP_PORT'] %>
 
 development:
   <<: *default
-  database: code-converter_development
+  database: app_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,7 +61,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: code-converter_test
+  database: app_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
