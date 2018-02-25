@@ -16,11 +16,12 @@ ActiveRecord::Schema.define(version: 20180224035203) do
   enable_extension "plpgsql"
 
   create_table "trades", force: :cascade do |t|
-    t.integer "trande_type"
+    t.integer "trade_type"
     t.datetime "date"
     t.decimal "price"
     t.string "cpf"
     t.integer "card_number"
+    t.datetime "hour"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
