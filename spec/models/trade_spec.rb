@@ -7,7 +7,7 @@
 #  date        :datetime
 #  price       :decimal(, )
 #  cpf         :string
-#  card_number :integer
+#  card_number :string
 #  hour        :datetime
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null

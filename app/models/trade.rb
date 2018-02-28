@@ -7,14 +7,14 @@
 #  date        :datetime
 #  price       :decimal(, )
 #  cpf         :string
-#  card_number :integer
+#  card_number :string
 #  hour        :datetime
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
 
 class Trade < ApplicationRecord
-  TRADE_TYPES = %i[nenhum debito juros financiamento credito emprestimo]
+  TRADE_TYPES = %w[nenhum debito juros financiamento credito emprestimo]
 
   enum trade_type: TRADE_TYPES
 

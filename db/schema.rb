@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20180224035203) do
     t.datetime "date"
     t.decimal "price"
     t.string "cpf"
-    t.integer "card_number"
+    t.string "card_number"
     t.datetime "hour"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
