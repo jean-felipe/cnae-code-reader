@@ -5,7 +5,6 @@ class TradeResource < BaseResource
     'txt - file'
   end
 
-
   def value
     return @model.price
   end

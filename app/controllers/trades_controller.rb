@@ -2,7 +2,7 @@ class TradesController < BaseController
   include JSONAPI::Utils
 
   def index
-    render json: Trade.all
+    jsonapi_render json: Trade.all
   end
 
   # POST /trade

@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe TradesController, type: :controller do
 
   describe "GET #index" do
-    xit "returns http success" do
+    it "returns http success" do
       get :index
       expect(response).to have_http_status(:success)
     end
@@ -27,10 +27,16 @@ RSpec.describe TradesController, type: :controller do
     end
 
     it "returns http success" do
-      require 'pry'; binding.pry
-      post :create, params
-      require 'pry'; binding.pry
+      post :create, params: params
       expect(response).to have_http_status(:success)
+      expect_json('data.0', type: 'trades')
+      expect(
+        json.dig('data', 0, 'attributes', 'trade-type')
+      ).to eq('debito')
+    end
+
+    it 'creates a new trade' do
+      expect{ post :create, params: params }.to change(Trade, :count).by(2)
     end
   end
 
