@@ -1,6 +1,8 @@
 class TradeResource < BaseResource
   attributes :trade_type, :date_of, :value, :cpf, :card_number, :date_hour, :file
 
+  filters :trade_type, :value, :cpf, :card_number
+
   def file
     'txt - file'
   end
