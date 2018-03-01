@@ -13,7 +13,7 @@ module Trades
             if VALID_TYPE.include?(trade[:trade_type])
               t = Trade.new(
                 trade_type: trade_type(trade[:trade_type]),
-                date: Time.at(trade[:date].to_i).to_date,
+                date: Time.at(trade[:date].to_i),
                 price: process_price(trade[:price]),
                 cpf: trade[:cpf],
                 card_number: trade[:card_number],
@@ -30,12 +30,12 @@ module Trades
 
     def trade_type(type_number)
       case type_number
-      when '1' then 'debito'
-      when '2' then 'juros'
-      when '3' then 'financiamento'
-      when '4' then 'credito'
-      when '5' then 'emprestimo'
-      else 'invalid'
+      when '1' then :debito
+      when '2' then :juros
+      when '3' then :financiamento
+      when '4' then :credito
+      when '5' then :emprestimo
+      else :invalid
       end
     end
 

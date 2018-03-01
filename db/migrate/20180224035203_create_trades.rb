@@ -5,7 +5,7 @@ class CreateTrades < ActiveRecord::Migration[5.1]
       t.datetime :date
       t.decimal :price
       t.string :cpf
-      t.integer :card_number
+      t.string :card_number
       t.datetime :hour
       t.timestamps
     end
