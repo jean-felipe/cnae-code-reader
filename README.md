@@ -12,10 +12,11 @@
 
 - Install docker for your environment.
 - Make the alias `alias dcc='docker-compose`
-- Run `docker-compose up`
+- Run `dcc up`
 - Access `localhost:3000` and find examples.
+- To find the documentation online access: https://code-converter.herokuapp.com/
 
 ## To run the tests:
 
 - Install docker first.
-- Run `docker-compose run web rspec`
+- Run `docker-compose run app rspec`
