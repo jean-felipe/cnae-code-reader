@@ -13,7 +13,7 @@
 - Install docker for your environment.
 - Make the alias `alias dcc='docker-compose`
 - Run `docker-compose up`
-- Access `localhost:3000/documentation` and find live examples.
+- Access `localhost:3000` and find examples.
 
 ## To run the tests:
 

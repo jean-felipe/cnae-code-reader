@@ -14,5 +14,8 @@ RSpec.configure do |config|
 
   config.shared_context_metadata_behavior = :apply_to_host_groups
   # config.include JsonHelpers::Base, type: :controller
+  config.before(:all) do
+    FactoryBot.reload
+  end
 
 end
