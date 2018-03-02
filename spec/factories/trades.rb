@@ -12,6 +12,8 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
+require 'faker'
+require 'cpf_faker'
 
 FactoryBot.define do
   factory :trade do
