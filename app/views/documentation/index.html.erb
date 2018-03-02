@@ -1,2 +1,115 @@
-<h1>Documentation#index</h1>
-<p>Find me in app/views/documentation/index.html.erb</p>
+<h1>Trades</h1>
+<p>Trades são as transações que o sistema gerencia</p>
+<p>A criação delas ocorre pelo envio de um arquivo txt o qual é interpretado pelo sistema</p>
+<p>E as informações dele são gravadas no sistema como trades</p>
+<hr>
+<h2>Endpoints:</h2>
+  <ul>
+    <li><a href="#index">Index</a></li>
+    <li><a href="#create">create</a></li>
+  </ul>
+
+<hr>
+<h2>Atributos:</h2>
+
+<table class="table table-striped">
+  <tr>
+    <th>atributo</th>
+    <th>descrição</th>
+    <th>exemplo</th>
+  </tr>
+  <tr>
+    <td>trade_type</td>
+    <td>Tipo da trade, apenas as trades do tipo crédito e débito são aceitos</td>
+    <td>debito</td>
+  </tr>
+  <tr>
+    <td>date_of</td>
+    <td>Data em que ocorreu a transação</td>
+    <td>2017-12-25</td>
+  </tr>
+  <tr>
+    <td>value</td>
+    <td>Preço ou valor da transação</td>
+    <td>2500.0</td>
+  </tr>
+  <tr>
+    <td>cpf</td>
+    <td>Cpf de quem realizou a trasação</td>
+    <td>08001889723</td>
+  </tr>
+  <tr>
+    <td>card_number</td>
+    <td>Número do cartão usado na transação</td>
+    <td>1234****6678</td>
+  </tr>
+  <tr>
+    <td>date_hour</td>
+    <td>Hora em que a transação foi realizada</td>
+    <td>13</td>
+  </tr>
+</table>
+
+<hr>
+
+<h3 id="index">Index</h3>
+<p>É possível listar todas as trades do sistema, assim como, filtra-las</p>
+<h4>Filtros</h4>
+<table class="table table-striped">
+  <tr>
+    <th>filtro</th>
+    <th>descrição</th>
+    <th>exemplo</th>
+  </tr>
+  <tr>
+    <td>trade_type</td>
+    <td>Filtra trades pelo tipo</td>
+    <td>filter[trade_type]=credito</td>
+  </tr>
+  <tr>
+    <td>value</td>
+    <td>Encontra trades pelo preço exato informado</td>
+    <td>filter[value]=15.0</td>
+  </tr>
+  <tr>
+    <td>cpf</td>
+    <td>Filtra trades pelo cpf informado</td>
+    <td>filter[cpf]=09809809809</td>
+  </tr>
+  <tr>
+    <td>card_number</td>
+    <td>Filtra trades pelo numero do cartão</td>
+    <td>filter[card_number]=12324387</td> 
+  </tr>
+</table>
+
+<hr>
+<br>
+<h4>Exemplo de chamada</h4>
+<ul>
+  <li>Método: <strong>GET</strong></li>
+  <li>URL: <strong>localhost:3000/trades</strong></li>
+  <li>Filtros: <strong>localhost:3000/trades?filter[filter-name]=filter_value</strong></li>
+</ul>
+<br>
+<hr>
+<br>
+<h3 id="create">Create</h3>
+<p>É possível criar trades a partir de arquivos txt.</p>
+<h4>Exemplo da chamada</h4>
+<ul>
+  <li>Método: <stong>POST</stong></li>
+  <li>URL: <strong>localhost:3000/trades</strong></li>
+  <li>Headers: <strong>Content-type:multipart/form-data</strong></li>
+</ul>
+<p>No endpoint de create é necessário passar um body com as seguintes propriedades:</p>
+<strong>Exemplo:</strong>
+<p>data[attributes[file]]=arquivo.txt --> <strong>obrigátorio passar o arquivo txt</strong></p> 
+<p>data[type]=trades --> <strong>obrigatorio informar o tipo</strong></p> 
+
+<hr>
+<p>Você pode baixar a coleção de exemplos para usar no postman, clicando no link abaixo:</p>
+<a href="https://www.dropbox.com/s/kwpyddouvq8js3a/Trades.postman_collection.json?dl=0">Coleção exemplo</a>
+
+<br>
+<br>

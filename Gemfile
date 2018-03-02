@@ -37,6 +37,7 @@ gem 'jsonapi-utils', '~> 0.7.0'
 gem 'rack-cors', :require => 'rack/cors'
 
 gem 'carrierwave-base64'
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
